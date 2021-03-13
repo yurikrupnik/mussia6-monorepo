@@ -1,0 +1,49 @@
+{
+  "name": "mussia6-monorepo",
+  "version": "1.0.0",
+  "description": "Mussia6 execution.",
+  "main": "index.js",
+  "scripts": {
+    "artifactregistry-login": "npx google-artifactregistry-auth .npmrc",
+    "bootstrap": "lerna bootstrap -- --production --no-optional",
+    "postinstall": "lerna exec --parallel -- npm i",
+    "prepare:ejs": "lerna run build:client",
+    "fucntion": "lerna run fucntion",
+    "start": "lerna run --parallel start",
+    "prebuild": "lerna exec -- rimraf dist functions",
+    "build": "lerna run --parallel build",
+    "lint": "lerna run --parallel lint",
+    "build:image": "lerna run --parallel build:image",
+    "test": "lerna run --stream test",
+    "npm-publish": "bash scripts/npm-publish.sh",
+    "compose:dev:up": "docker-compose -f docker-compose.dev.yaml up -d",
+    "compose:dev:down": "docker-compose -f docker-compose.dev.yaml down",
+    "compose:prod:up": "docker-compose up -d",
+    "compose:prod:build": "docker-compose build",
+    "compose:prod:down": "docker-compose down",
+    "docker:local": "lerna run --parallel docker:local",
+    "e2e": "lerna run --stream e2e",
+    "deploy:docker:single-host": "bash scripts/deployments/local-docker-swarm.sh",
+    "deploy": "lerna run --parallel deploy",
+    "link": "lerna run --stream link",
+    "unlink": "lerna run --stream unlink",
+    "tsc": "lerna run --stream tsc",
+    "pre-push": "node scripts/hooks/pre-push.js",
+    "pre-commit": "node scripts/hooks/pre-commit.js",
+    "prepare-commit-msg": "node scripts/hooks/prepare-commit-msg.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurikrupnik/mussia6-monorepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yurikrupnik/mussia6-monorepo/issues"
+  },
+  "homepage": "https://github.com/yurikrupnik/mussia6-monorepo#readme",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
