@@ -9,7 +9,7 @@
     "postinstall": "lerna exec --parallel -- npm i",
     "prepare:ejs": "lerna run build:client",
     "fucntion": "lerna run fucntion",
-    "start": "lerna run --parallel start",
+    "dev": "lerna run --parallel dev",
     "prebuild": "lerna exec -- rimraf dist functions",
     "build": "lerna run --parallel build",
     "lint": "lerna run --parallel lint",

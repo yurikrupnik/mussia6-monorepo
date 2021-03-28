@@ -25,7 +25,7 @@
     "directory": "packages/ui/button"
   },
   "scripts": {
-    "start": "rollup --config=../../../rollup.config.ts -w",
+    "dev": "rollup --config=../../rollup.config.ts -w",
     "prebuild": "rimraf dist",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --color",
     "test": "jest src --colors",
