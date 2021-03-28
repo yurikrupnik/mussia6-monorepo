@@ -4,7 +4,7 @@
 name: Node.js Package
 
 on:
-  create
+  push
 #    branches:
 #      - '!master'
 
@@ -53,16 +53,17 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-#  publish-gpr:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: actions/setup-node@v1npm
-#        with:
-#          node-version: 12
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1npm
+        with:
+          node-version: 12
 #          registry-url: https://npm.pkg.github.com/
-#      - run: npm ci
-#      - run: npx lerna publish patch --yes --conventional-commits
+      - run: npm ci
+      - run: npm run build
+      - run: npx lerna publish patch --yes --conventional-commits
 #        env:
 #          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
