@@ -28,7 +28,12 @@ it(`should render select component`, () => {
     render(
         <Formik onSubmit={jest.fn()} initialValues={{ aris: "a" }}>
             <Form>
-                <FormField name="aris" type="select" options={[{ _id: "a", name: "a" }]} fullWidth />
+                <FormField
+                    name="aris"
+                    type="select"
+                    options={[{ _id: "a", name: "a" }]}
+                    fullWidth
+                />
             </Form>
         </Formik>
     );

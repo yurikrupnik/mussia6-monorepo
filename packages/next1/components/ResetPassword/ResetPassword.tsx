@@ -16,7 +16,8 @@ import FormField from "../FormField";
 // import DialogPasswordInfo from "../../components/uiComponents/DialogPasswordInfo";
 // import { Context } from "../../api/auth/context";
 
-const logo = "https://res.cloudinary.com/amadeus7/image/upload/v1589968085/react-platform/logoOnboarding.svg";
+const logo =
+    "https://res.cloudinary.com/amadeus7/image/upload/v1589968085/react-platform/logoOnboarding.svg";
 
 const validationSchema = Yup.object().shape({
     password: Yup.string().required("Password is required"),
@@ -71,12 +72,26 @@ const ResetPassword = () => {
     // }, [openInfo]);
 
     return (
-        <Grid container item xs={12} direction="row" justify="center" alignItems="center">
+        <Grid
+            container
+            item
+            xs={12}
+            direction="row"
+            justify="center"
+            alignItems="center"
+        >
             {/*{openInfo && <DialogPasswordInfo open={openInfo} data={infoDialogData} toggleOpen={setOpenInfo} />}*/}
             <Grid item xs={12}>
                 <img src={logo} alt="logo" />
             </Grid>
-            <Grid container item xs={10} direction="row" justify="center" alignItems="center">
+            <Grid
+                container
+                item
+                xs={10}
+                direction="row"
+                justify="center"
+                alignItems="center"
+            >
                 <Formik
                     initialValues={{
                         password: "",
@@ -98,9 +113,19 @@ const ResetPassword = () => {
                 >
                     {(formProps) => {
                         const { isValid } = formProps;
-                        const isValidButton = isValid && formProps.values.password && formProps.values.verifyPassword;
+                        const isValidButton =
+                            isValid &&
+                            formProps.values.password &&
+                            formProps.values.verifyPassword;
                         return (
-                            <Grid container item xs={12} direction="row" justify="center" alignItems="center">
+                            <Grid
+                                container
+                                item
+                                xs={12}
+                                direction="row"
+                                justify="center"
+                                alignItems="center"
+                            >
                                 <Form>
                                     <Grid
                                         container
@@ -127,7 +152,9 @@ const ResetPassword = () => {
                                                     // className={`${classes.colorGrey} ${classes.subTitle}`}
                                                     align="center"
                                                 >
-                                                    We&#39;ll ask for this password whenever you sign in
+                                                    We&#39;ll ask for this
+                                                    password whenever you sign
+                                                    in
                                                 </Typography>
                                             </Grid>
                                             <Grid item xs={12}>
@@ -183,7 +210,13 @@ const ResetPassword = () => {
                                                 </Button>
                                             </Grid>
                                         </Grid>
-                                        <Grid item xs={11} container justify="space-between" spacing={10}>
+                                        <Grid
+                                            item
+                                            xs={11}
+                                            container
+                                            justify="space-between"
+                                            spacing={10}
+                                        >
                                             <Grid
                                                 item
                                                 xs={3}
@@ -194,8 +227,9 @@ const ResetPassword = () => {
                                                     variant="body2"
                                                     // className={classes.colorGrey}
                                                 >
-                                                    Use at least 8 characters, a combination of numbers and letters is
-                                                    best
+                                                    Use at least 8 characters, a
+                                                    combination of numbers and
+                                                    letters is best
                                                 </Typography>
                                             </Grid>
                                             <Grid
@@ -208,8 +242,11 @@ const ResetPassword = () => {
                                                     variant="body2"
                                                     // className={classes.colorGrey}
                                                 >
-                                                    Do not use dictionary words, your name, e-mail address, mobile phone
-                                                    or other personal information that can be easily obtained.
+                                                    Do not use dictionary words,
+                                                    your name, e-mail address,
+                                                    mobile phone or other
+                                                    personal information that
+                                                    can be easily obtained.
                                                 </Typography>
                                             </Grid>
                                             <Grid
@@ -222,7 +259,9 @@ const ResetPassword = () => {
                                                     variant="body2"
                                                     // className={classes.colorGrey}
                                                 >
-                                                    Do not use tha same password for multiple online accounts.
+                                                    Do not use tha same password
+                                                    for multiple online
+                                                    accounts.
                                                 </Typography>
                                             </Grid>
                                         </Grid>

@@ -5,5 +5,5 @@ import Component from "../index";
 afterEach(cleanup);
 
 test(`render ${Component.name} Component`, () => {
-    render(<Component text={"s"} data={[]} onClick={jest.fn()} />);
+    render(<Component text="s" data={[]} onClick={jest.fn()} />);
 });

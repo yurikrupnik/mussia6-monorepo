@@ -4,7 +4,11 @@ import { NextApiRequest, NextApiResponse } from "next";
 const connection: Partial<{ isConnected: ConnectionStates }> = {};
 
 console.log("process.env.MONGODB_URI", process.env.MONGODB_URI); // eslint-disable-line
-async function connectDb(req: NextApiRequest, res: NextApiResponse, next: () => void) {
+async function connectDb(
+    req: NextApiRequest,
+    res: NextApiResponse,
+    next: () => void
+) {
     if (connection.isConnected) {
         console.log("Using existing connection"); // eslint-disable-line
         return next();

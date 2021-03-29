@@ -1,5 +1,5 @@
 import React from "react";
-// import styles from "./CustomButton.module.scss";
+import styles from "./CustomButton.module.scss";
 
 interface Props {
     text?: string;
@@ -7,7 +7,11 @@ interface Props {
 
 const CustomButton = (props: Props) => {
     const { text } = props;
-    return <button type="button">{text}</button>;
+    return (
+        <button type="button" className={styles.alert}>
+            {text}
+        </button>
+    );
 };
 
 CustomButton.defaultProps = {

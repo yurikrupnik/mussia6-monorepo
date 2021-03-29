@@ -38,7 +38,7 @@ const logo = "";
 const logoBlack = "";
 const Login = () => {
     const [session] = useSession();
-    console.log("session", session);
+    console.log("session", session); // eslint-disable-line
     // console.log("loading", loading);
 
     const { data, mutate } = useSWR("/api/users", fetcher);
@@ -77,7 +77,14 @@ const Login = () => {
     );
 
     return (
-        <Grid container item xs={12} direction="row" justify="center" alignItems="center">
+        <Grid
+            container
+            item
+            xs={12}
+            direction="row"
+            justify="center"
+            alignItems="center"
+        >
             <Grid item xs={12}>
                 <Hidden smDown>
                     <img src={logo} alt="logo" />
@@ -86,7 +93,15 @@ const Login = () => {
                     <img src={logoBlack} alt="logos" />
                 </Hidden>
             </Grid>
-            <Grid container item sm={10} xs={12} direction="row" justify="center" alignItems="center">
+            <Grid
+                container
+                item
+                sm={10}
+                xs={12}
+                direction="row"
+                justify="center"
+                alignItems="center"
+            >
                 <Formik
                     initialValues={{
                         email: "",
@@ -110,20 +125,38 @@ const Login = () => {
                                 alignItems="center"
                             >
                                 <Form>
-                                    <Grid container item xs={12} direction="row" justify="center" alignItems="center">
+                                    <Grid
+                                        container
+                                        item
+                                        xs={12}
+                                        direction="row"
+                                        justify="center"
+                                        alignItems="center"
+                                    >
                                         <Grid item xs={12}>
-                                            <Typography variant="h6" onClick={handleSignOut} align="center">
+                                            <Typography
+                                                variant="h6"
+                                                onClick={handleSignOut}
+                                                align="center"
+                                            >
                                                 Welcome
                                             </Typography>
                                         </Grid>
                                         <Grid item xs={12}>
-                                            <Typography variant="body2" align="center">
-                                                Build The Commercial Travel Website of Your Dreams
+                                            <Typography
+                                                variant="body2"
+                                                align="center"
+                                            >
+                                                Build The Commercial Travel
+                                                Website of Your Dreams
                                             </Typography>
                                         </Grid>
                                         <Grid item xs={12}>
                                             {loginError && (
-                                                <Typography variant="body2" align="center">
+                                                <Typography
+                                                    variant="body2"
+                                                    align="center"
+                                                >
                                                     {loginError}
                                                 </Typography>
                                             )}
@@ -141,17 +174,31 @@ const Login = () => {
                                             </Button>
                                         </Grid>
                                         <Grid item xs={12}>
-                                            <Grid container direction="row" justify="center" alignItems="center">
+                                            <Grid
+                                                container
+                                                direction="row"
+                                                justify="center"
+                                                alignItems="center"
+                                            >
                                                 <Grid item xs={5}>
-                                                    <Divider orientation="horizontal" variant="fullWidth" />
+                                                    <Divider
+                                                        orientation="horizontal"
+                                                        variant="fullWidth"
+                                                    />
                                                 </Grid>
                                                 <Grid item xs={2}>
-                                                    <Typography variant="body1" align="center">
+                                                    <Typography
+                                                        variant="body1"
+                                                        align="center"
+                                                    >
                                                         OR
                                                     </Typography>
                                                 </Grid>
                                                 <Grid item xs={5}>
-                                                    <Divider orientation="horizontal" variant="fullWidth" />
+                                                    <Divider
+                                                        orientation="horizontal"
+                                                        variant="fullWidth"
+                                                    />
                                                 </Grid>
                                             </Grid>
                                         </Grid>
@@ -173,9 +220,22 @@ const Login = () => {
                                                 disabled={loading}
                                             />
                                         </Grid>
-                                        <Grid item container xs={12} alignItems="center">
-                                            <Grid item sm={6} xs={12} container justify="flex-end">
-                                                <Button disabled={loading}>Forgot Password</Button>
+                                        <Grid
+                                            item
+                                            container
+                                            xs={12}
+                                            alignItems="center"
+                                        >
+                                            <Grid
+                                                item
+                                                sm={6}
+                                                xs={12}
+                                                container
+                                                justify="flex-end"
+                                            >
+                                                <Button disabled={loading}>
+                                                    Forgot Password
+                                                </Button>
                                             </Grid>
                                         </Grid>
                                         <Grid item xs={12}>
@@ -189,9 +249,19 @@ const Login = () => {
                                                 Login
                                             </Button>
                                         </Grid>
-                                        <Button onClick={() => signin("google")}>Google</Button>
-                                        <Button onClick={() => signin("github")}>Github</Button>
-                                        <Button onClick={() => signOut()}>Logout</Button>
+                                        <Button
+                                            onClick={() => signin("google")}
+                                        >
+                                            Google
+                                        </Button>
+                                        <Button
+                                            onClick={() => signin("github")}
+                                        >
+                                            Github
+                                        </Button>
+                                        <Button onClick={() => signOut()}>
+                                            Logout
+                                        </Button>
                                         {/*<a href="/api/auth/google">*/}
                                         {/*    <Button>Google</Button>*/}
                                         {/*</a>*/}

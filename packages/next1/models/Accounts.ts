@@ -1,4 +1,10 @@
-import mongoose, { Schema, Document, Model as Mo, SchemaTypeOptions, SchemaTimestampsConfig } from "mongoose";
+import mongoose, {
+    Schema,
+    Document,
+    Model as Mo,
+    SchemaTypeOptions,
+    SchemaTimestampsConfig,
+} from "mongoose";
 // import { dbModel } from "./config";
 import UserModel from "./User";
 // import { validateEmail } from "../utils/validation";
@@ -25,9 +31,14 @@ type AccountsFront = {
 
 // type UserGroup = AccountsFront;
 // type User = Pick<SchemaTimestampsConfig, SchemaFilter> & AccountsFront;
-type AccountsDocument = Pick<SchemaTimestampsConfig, SchemaFilter> & AccountsFront & Document;
+type AccountsDocument = Pick<SchemaTimestampsConfig, SchemaFilter> &
+    AccountsFront &
+    Document;
 
-const AccountsSchemaObj: Record<keyof AccountsFront, SchemaTypeOptions<string | number>> = {
+const AccountsSchemaObj: Record<
+    keyof AccountsFront,
+    SchemaTypeOptions<string | number>
+> = {
     compoundId: {
         type: String,
     },
@@ -64,11 +75,16 @@ const AccountsSchemaObj: Record<keyof AccountsFront, SchemaTypeOptions<string | 
 delete mongoose.connection.models[dbModel];
 // }
 
-const AccountsSchema: Schema = new Schema(AccountsSchemaObj, { timestamps: true });
+const AccountsSchema: Schema = new Schema(AccountsSchemaObj, {
+    timestamps: true,
+});
 
 type UserGroupModel = Mo<AccountsDocument>;
 
-const Model: UserGroupModel = mongoose.model<AccountsDocument>(dbModel, AccountsSchema);
+const Model: UserGroupModel = mongoose.model<AccountsDocument>(
+    dbModel,
+    AccountsSchema
+);
 
 // const mock: UserGroupFront[] = [
 //     {

@@ -7,7 +7,11 @@ import connectDb from "@/middlewares/db";
 // import session from "@/middlewares/session";
 
 // eslint-disable-next-line
-const handler = nc().use(morgan("dev")).use(helmet()).use(cookieParser()).use(connectDb);
+const handler = nc()
+    .use(morgan("dev"))
+    .use(helmet())
+    .use(cookieParser())
+    .use(connectDb);
 
 // .use(passport.initialize())
 // .use(passport.session())
