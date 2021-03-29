@@ -2,8 +2,8 @@ import React from "react";
 
 // import PropTypes from 'prop-types';
 // import Bu from "@puzzle-mussia/button1";
-import MuButton from "@material-ui/core/Button";
-import { ButtonProps } from "@material-ui/core/Button";
+import MuButton, { ButtonProps } from "@material-ui/core/Button";
+// import { ButtonProps } from "@material-ui/core/Button";
 import styles from "./button.module.scss";
 // import styles from "./button.module.css";
 // import styles from "./button.less";

@@ -3,8 +3,7 @@
 
 name: Node.js Package
 
-on:
-  create
+on: push
 #    branches:
 #      - '!master'
 
@@ -12,57 +11,58 @@ on:
 #     types: [created]
 
 jobs:
-#  build:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: actions/setup-node@v1
-#        with:
-#          node-version: ${{secrets.node_version}}
-#      - run: npm ci
-#      - run: npm run lint
-#      - run: npm test
-#      - run: npm run build
-#      - uses: actions/upload-artifact@v2
-#          with:
-#            name: my-artifact
-#            path: packages/**/**/dist/ # or path/to/artifact
-#      - run: npm whoami
+    #  build:
+    #    runs-on: ubuntu-latest
+    #    steps:
+    #      - uses: actions/checkout@v2
+    #      - uses: actions/setup-node@v1
+    #        with:
+    #          node-version: ${{secrets.node_version}}
+    #      - run: npm ci
+    #      - run: npm run lint
+    #      - run: npm test
+    #      - run: npm run build
+    #      - uses: actions/upload-artifact@v2
+    #          with:
+    #            name: my-artifact
+    #            path: packages/**/**/dist/ # or path/to/artifact
+    #      - run: npm whoami
 
-  publish-npm:
-#    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
-          registry-url: https://registry.npmjs.org/
-#      - run: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/.npmrc
-#      - uses: nelonoel/branch-name@v1
-#      - run: echo aris ${BRANCH_NAME}
-      - run: git config --global user.email krupnik.yuri@gmail.com && git config --global user.name yurikrupnik
-#      - run: npm ci
-#      - run: npx lerna publish prepatch --pre-dist-tag=${BRANCH_NAME} --yes --conventional-commits
-#      - uses: actions/download-artifact@v2
-#          with:
-#            name: my-artifact
-#      - run: npm i -g lerna
-#     - run: npx lerna publish prepatch --pre-dist-tag=${BRANCH_NAME} --yes --conventional-commits
-#       - run: npx lerna publish patch --yes --conventional-commits
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+    publish-npm:
+        #    needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 14
+                  registry-url: https://registry.npmjs.org/
+            #      - run: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/.npmrc
+            #      - uses: nelonoel/branch-name@v1
+            #      - run: echo aris ${BRANCH_NAME}
+            - run: git config --global user.email krupnik.yuri@gmail.com && git config --global user.name yurikrupnik
+              #      - run: npm ci
+              #      - run: npx lerna publish prepatch --pre-dist-tag=${BRANCH_NAME} --yes --conventional-commits
+              #      - uses: actions/download-artifact@v2
+              #          with:
+              #            name: my-artifact
+              #      - run: npm i -g lerna
+              #     - run: npx lerna publish prepatch --pre-dist-tag=${BRANCH_NAME} --yes --conventional-commits
+              #       - run: npx lerna publish patch --yes --conventional-commits
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-#  publish-gpr:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: actions/setup-node@v1npm
-#        with:
-#          node-version: 12
-#          registry-url: https://npm.pkg.github.com/
-#      - run: npm ci
-#      - run: npx lerna publish patch --yes --conventional-commits
+    publish-gpr:
+        #    needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 14
+            #          registry-url: https://npm.pkg.github.com/
+            - run: npm ci
+            - run: npm run build
+#            - run: npx lerna publish patch --yes --conventional-commits
 #        env:
 #          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
