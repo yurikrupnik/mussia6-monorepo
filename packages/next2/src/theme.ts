@@ -1,6 +1,12 @@
 import { createMuiTheme, darken, fade } from "@material-ui/core/styles";
-import { Theme as DefaultTheme, SimplePaletteColorOptions } from "@material-ui/core";
-import { CommonColors, PaletteOptions } from "@material-ui/core/styles/createPalette";
+import {
+    Theme as DefaultTheme,
+    SimplePaletteColorOptions,
+} from "@material-ui/core";
+import {
+    CommonColors,
+    PaletteOptions,
+} from "@material-ui/core/styles/createPalette";
 import { TypographyOptions } from "@material-ui/core/styles/createTypography";
 
 type Theme = Omit<DefaultTheme, "palette" | "typography"> & {

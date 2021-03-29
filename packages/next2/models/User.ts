@@ -1,4 +1,9 @@
-import mongoose, { Document, Model as Mo, Schema, SchemaTypeOptions } from "mongoose";
+import mongoose, {
+    Document,
+    Model as Mo,
+    Schema,
+    SchemaTypeOptions,
+} from "mongoose";
 // import { dbModel } from "./config";
 import { validateEmail } from "../utils/validation";
 // import { generateHashSync } from "../utils/crypt";
@@ -118,7 +123,10 @@ const UsersSchema: Schema = new Schema(userGroupSchemaObj);
 
 type UserGroupModel = Mo<UserGroupDocument>;
 
-const Model: UserGroupModel = mongoose.model<UserGroupDocument>(dbModel, UsersSchema);
+const Model: UserGroupModel = mongoose.model<UserGroupDocument>(
+    dbModel,
+    UsersSchema
+);
 
 // const mock: UserGroupFront[] = [
 //     {

@@ -27,22 +27,41 @@ function respondWithResult<T>(res: NextApiResponse) {
     };
 }
 
-const list = <T extends mongoose.Model<Document>>(Model: T) => (req: NextApiRequest, res: NextApiResponse) => {
+const list = <T extends mongoose.Model<Document>>(Model: T) => (
+    req: NextApiRequest,
+    res: NextApiResponse
+) => {
     Model.find(req.query).then(respondWithResult(res)).catch(handleError(res));
 };
 
 // changed from express params to query - next way for dynamic routes
-const find = (Model: mongoose.Model<Document>) => (req: NextApiRequest, res: NextApiResponse) => {
-    Model.findOne({ _id: req.query.id }).then(respondWithResult(res)).catch(handleError(res));
+const find = (Model: mongoose.Model<Document>) => (
+    req: NextApiRequest,
+    res: NextApiResponse
+) => {
+    Model.findOne({ _id: req.query.id })
+        .then(respondWithResult(res))
+        .catch(handleError(res));
 };
 
-const removeOne = (Model: mongoose.Model<Document>) => (req: NextApiRequest, res: NextApiResponse) =>
-    Model.findByIdAndDelete(req.query.id).then(responseId(req, res)).catch(handleError(res));
+const removeOne = (Model: mongoose.Model<Document>) => (
+    req: NextApiRequest,
+    res: NextApiResponse
+) =>
+    Model.findByIdAndDelete(req.query.id)
+        .then(responseId(req, res))
+        .catch(handleError(res));
 
-const create = (Model: mongoose.Model<Document>) => (req: NextApiRequest, res: NextApiResponse) =>
+const create = (Model: mongoose.Model<Document>) => (
+    req: NextApiRequest,
+    res: NextApiResponse
+) =>
     Model.create(req.body).then(respondWithResult(res)).catch(handleError(res));
 
-const update = (Model: mongoose.Model<Document>) => (req: NextApiRequest, res: NextApiResponse) =>
+const update = (Model: mongoose.Model<Document>) => (
+    req: NextApiRequest,
+    res: NextApiResponse
+) =>
     Model.findOneAndUpdate(
         {
             _id: req.body._id, // eslint-disable-line no-underscore-dangle
@@ -56,4 +75,12 @@ const update = (Model: mongoose.Model<Document>) => (req: NextApiRequest, res: N
         .then(respondWithResult(res))
         .catch(handleError(res));
 
-export { list, find, update, create, removeOne, respondWithResult, handleError };
+export {
+    list,
+    find,
+    update,
+    create,
+    removeOne,
+    respondWithResult,
+    handleError,
+};

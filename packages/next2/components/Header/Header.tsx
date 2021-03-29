@@ -158,7 +158,10 @@ export default function PrimarySearchAppBar() {
                 <p>Message sss</p>
             </MenuItem>
             <MenuItem>
-                <IconButton aria-label="show 11 new notifications" color="inherit">
+                <IconButton
+                    aria-label="show 11 new notifications"
+                    color="inherit"
+                >
                     <Badge badgeContent={11} color="secondary">
                         <NotificationsIcon />
                     </Badge>
@@ -183,7 +186,12 @@ export default function PrimarySearchAppBar() {
         <div>
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="open drawer">
+                    <IconButton
+                        edge="start"
+                        className={classes.menuButton}
+                        color="inherit"
+                        aria-label="open drawer"
+                    >
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
@@ -206,12 +214,18 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <div />
                     <div>
-                        <IconButton aria-label="show 4 new mails" color="inherit">
+                        <IconButton
+                            aria-label="show 4 new mails"
+                            color="inherit"
+                        >
                             <Badge badgeContent={4} color="secondary">
                                 <MailIcon />
                             </Badge>
                         </IconButton>
-                        <IconButton aria-label="show 17 new notifications" color="inherit">
+                        <IconButton
+                            aria-label="show 17 new notifications"
+                            color="inherit"
+                        >
                             <Badge badgeContent={17} color="secondary">
                                 <NotificationsIcon />
                             </Badge>
