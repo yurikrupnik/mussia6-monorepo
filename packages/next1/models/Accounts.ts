@@ -1,9 +1,9 @@
 import mongoose, {
-    Schema,
     Document,
     Model as Mo,
-    SchemaTypeOptions,
+    Schema,
     SchemaTimestampsConfig,
+    SchemaTypeOptions,
 } from "mongoose";
 // import { dbModel } from "./config";
 import UserModel from "./User";

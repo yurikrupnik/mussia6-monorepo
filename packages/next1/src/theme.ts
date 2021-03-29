@@ -1,7 +1,7 @@
-import { createMuiTheme, fade, darken } from "@material-ui/core/styles";
+import { createMuiTheme, darken, fade } from "@material-ui/core/styles";
 import {
-    SimplePaletteColorOptions,
     Theme as DefaultTheme,
+    SimplePaletteColorOptions,
 } from "@material-ui/core";
 import {
     CommonColors,

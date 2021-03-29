@@ -36,6 +36,17 @@ module.exports = {
         "comma-dangle": 0,
         "no-underscore-dangle": 0,
         "@typescript-eslint/no-unused-vars": "error",
+        "sort-imports": [
+            "error",
+            {
+                // ignoreCase: true,
+                ignoreDeclarationSort: true,
+                // ignoreMemberSort: true,
+                // memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+                // allowSeparatedGroups: true,
+            },
+        ],
+
         // "no-underscore-dangle": 0,
         // "react/display-name": "warn",
         // "react-hooks/rules-of-hooks": "warn",

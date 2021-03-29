@@ -1,7 +1,7 @@
 import mongoose, {
-    Schema,
     Document,
     Model as Mo,
+    Schema,
     SchemaTypeOptions,
 } from "mongoose";
 // import { dbModel } from "./config";

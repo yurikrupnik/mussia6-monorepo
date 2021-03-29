@@ -1,7 +1,7 @@
 // import session from "express-session";
 // import connectMongo from "connect-mongo";
 // todo check wny express
-import { Request, Response, NextFunction } from "express";
+import { NextFunction, Request, Response } from "express";
 // import { NextApiRequest, NextApiResponse } from "next";
 
 export default (req: Request, res: Response, next: NextFunction) => {

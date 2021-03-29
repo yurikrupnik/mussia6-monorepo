@@ -1,18 +1,17 @@
+import { Field, Form, Formik } from "formik";
 import React from "react";
-import { Formik, Form, Field } from "formik";
-import * as Yup from "yup";
-
+import Yup from "yup";
+import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+import FormField from "../FormField";
+
 // import InputAdornment from "@material-ui/core/InputAdornment";
 // import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 // import { useToggle } from "react-use";
 
 // import styles from "./resetPasswordStyles";
-
-import FormField from "../FormField";
 // import DialogPasswordInfo from "../../components/uiComponents/DialogPasswordInfo";
 // import { Context } from "../../api/auth/context";
 
@@ -113,10 +112,10 @@ const ResetPassword = () => {
                 >
                     {(formProps) => {
                         const { isValid } = formProps;
-                        const isValidButton =
-                            isValid &&
-                            formProps.values.password &&
-                            formProps.values.verifyPassword;
+                        const isValidButton = isValid;
+                        console.log(isValidButton); // eslint-disable-line
+                        // formProps.values.password &&
+                        //     formProps.values.verifyPassword;
                         return (
                             <Grid
                                 container

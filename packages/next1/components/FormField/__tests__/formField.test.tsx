@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 import { Form, Formik } from "formik";
 import FormField from "../index";
 
