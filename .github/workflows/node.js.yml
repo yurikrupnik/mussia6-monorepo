@@ -63,6 +63,6 @@ jobs:
             #          registry-url: https://npm.pkg.github.com/
             - run: npm ci
             - run: npm run build
-            - run: npx lerna publish patch --yes --conventional-commits
+#            - run: npx lerna publish patch --yes --conventional-commits
 #        env:
 #          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
