@@ -1,6 +1,7 @@
 {
     "packages": [
         "packages/*",
+        "packages/functions/*",
         "packages/services/*",
         "packages/ui/*",
         "packages/ui-routes/*",
