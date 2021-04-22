@@ -30,7 +30,8 @@
         "tsc": "lerna run --stream tsc",
         "pre-push": "node scripts/hooks/pre-push.js",
         "pre-commit": "node scripts/hooks/pre-commit.js",
-        "prepare-commit-msg": "node scripts/hooks/prepare-commit-msg.js"
+        "prepare-commit-msg": "node scripts/hooks/prepare-commit-msg.js",
+        "docs:react": "npx styleguidist server"
     },
     "repository": {
         "type": "git",
@@ -69,13 +70,15 @@
         "node-sass": "^5.0.0",
         "postcss": "^8.2.8",
         "prettier": "^2.2.1",
+        "react-styleguidist": "^11.1.6",
         "rollup": "^2.41.2",
         "rollup-plugin-esbuild": "^3.0.2",
         "rollup-plugin-postcss": "^4.0.0",
         "rollup-plugin-typescript2": "^0.30.0",
         "stylelint": "^13.12.0",
         "stylelint-config-standard": "^21.0.0",
-        "typescript": "^4.2.3"
+        "typescript": "^4.2.3",
+        "webpack": "^5.35.0"
     },
     "prettier": {
         "arrowParens": "always",
