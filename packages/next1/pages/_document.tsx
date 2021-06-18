@@ -12,7 +12,7 @@ class MyDocument extends Document {
                     {/* PWA primary color */}
                     <meta
                         name="theme-color"
-                        content={theme.palette.primary.main}
+                        content={theme.palette.secondary.main}
                     />
                     <link
                         rel="stylesheet"
