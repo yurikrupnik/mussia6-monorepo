@@ -45,8 +45,8 @@
     },
     "homepage": "https://github.com/yurikrupnik/mussia6-monorepo#readme",
     "devDependencies": {
-        "@babel/core": "7.14.2",
-        "@babel/preset-env": "7.14.2",
+        "@babel/core": "7.25.9",
+        "@babel/preset-env": "7.25.9",
         "@babel/preset-react": "^7.13.13",
         "@babel/preset-typescript": "^7.13.0",
         "@types/jest": "26.0.23",
